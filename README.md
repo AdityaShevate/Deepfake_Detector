@@ -13,3 +13,4 @@ Detect whether uploaded images or videos are real or deepfake using AI.
 - TensorFlow
 - FastAPI
 - React
+- Flask
