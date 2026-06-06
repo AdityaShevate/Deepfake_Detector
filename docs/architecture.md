@@ -4,4 +4,4 @@ Backend (FastAPI)
       ↓
 Deepfake Model
       ↓
-Prediction
+Prediction result
