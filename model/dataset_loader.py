@@ -12,3 +12,5 @@ train_generator = train_datagen.flow_from_directory(
     class_mode="binary",
     subset="training"
 )
+
+print(train_generator.class_indices)
