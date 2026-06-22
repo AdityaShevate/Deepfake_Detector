@@ -26,17 +26,15 @@ img_array = img_array / 255.0
 prediction = model.predict(
     img_array
 )
+print("Raw prediction:", prediction[0][0])
+score = prediction[0][0]
 
-confidence = prediction[0][0] * 100
-
-if prediction[0][0] > 0.5:
-
-    print("Prediction: Fake")
-
+if score > 0.5:
+    label = "Real"      # or Fake depending on mapping
+    confidence = score * 100
 else:
+    label = "Fake"
+    confidence = (1 - score) * 100
 
-    print("Prediction: Real")
-
-print(
-    f"Confidence: {confidence:.2f}%"
-)
+print(f"Prediction: {label}")
+print(f"Confidence: {confidence:.2f}%")
