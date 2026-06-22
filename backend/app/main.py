@@ -167,6 +167,12 @@ async def predict_image(
 
 
 
+@app.post(
+    "/analyze",
+    summary="Analyze image for deepfake detection",
+    description="Upload a JPG, JPEG, or PNG image and receive a deepfake prediction."
+)
+
 
 
 @app.post("/analyze")
@@ -192,6 +198,7 @@ async def analyze_image(
             "success": False,
             "error": "No file selected"
         }
+    print("Image received:", file.filename)
 
     try:
 
@@ -234,6 +241,8 @@ async def analyze_image(
             img_array
         )
 
+        print("Running model prediction...")
+
         # Adjust according to your class mapping
 
         if prediction[0][0] > 0.5:
@@ -246,7 +255,10 @@ async def analyze_image(
             * 100
         )
 
+        print("Prediction:", label)
+
         return {
+            "success": True,
             "prediction": label,
             "confidence": round(
                 confidence,

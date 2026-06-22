@@ -46,5 +46,10 @@ function ImageUpload() {
   </div>
 );
 }
+<button
+  onClick={handleAnalyze}
+>
+  Analyze
+</button>
 
 export default ImageUpload;
