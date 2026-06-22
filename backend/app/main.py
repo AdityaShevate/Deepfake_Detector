@@ -2,7 +2,16 @@ from fastapi import FastAPI
 from fastapi import UploadFile
 from fastapi import File
 
+from tensorflow.keras.models import load_model
+
 app = FastAPI()
+
+model = load_model(
+    "models/deepfake_detector.keras"
+)
+print("Model Loaded Successfully")
+def get_model():
+    return model
 
 @app.get("/")
 def home():
