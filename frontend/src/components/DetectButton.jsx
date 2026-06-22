@@ -1,6 +1,6 @@
-function DetectButton() {
+function DetectButton({ onDetect }) {
   return (
-    <button>
+    <button onClick={onDetect}>
       Detect
     </button>
   );
