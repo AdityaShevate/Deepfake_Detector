@@ -1,9 +1,9 @@
-FaceForensics++
-Celeb-DF
-DFDC
 
-Selected Dataset:
+Dataset Chosen:
 FaceForensics++
 
 Reason:
-Suitable for educational deepfake detection project.
+Popular
+Research-based
+Suitable for learning
+It is a large dataset with 7000 photos and vedios
